@@ -29,6 +29,8 @@ public class monkeyBall : MonoBehaviour
     public GameObject map;    // The current map
     public GameMode mode = GameMode.idle;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public Text gameOverText;
     void Start()
     {
         S = this; // Define the Singleton                                      // c
@@ -36,6 +38,7 @@ public class monkeyBall : MonoBehaviour
         level = 0;
 
         levelMax = maps.Length;
+        gameOverText.text = "";
         StartLevel();
     }
 
@@ -68,6 +71,7 @@ public class monkeyBall : MonoBehaviour
     void Update()
     {
         UpdateGUI();
+
         if ((mode == GameMode.playing) && Goal.goalMet)
         {
             // Change mode to stop checking for level end
@@ -81,6 +85,7 @@ public class monkeyBall : MonoBehaviour
         level++;
         if (level == levelMax)
         {
+            gameOverText.text = "Game over";
             level = 0;
             //finish game
         }
@@ -89,5 +94,6 @@ public class monkeyBall : MonoBehaviour
     void playerReset()
     {
         player.transform.position = new Vector3(0, 0.572f, 0);
+        gameOverText.text = "";
     }
 }
