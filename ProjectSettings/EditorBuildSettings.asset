@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Roll-a-ball-Arata.unity
+    guid: 61f03d5498c9d3b41a8c5e1904b1d1ab
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
